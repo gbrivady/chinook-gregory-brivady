@@ -10,3 +10,10 @@ class IndexView(generic.ListView):
     def get_queryset(self):
         # Return all the albums, ordered by title in alphabetical order
         return Album.objects.order_by('title')
+
+class DetailView(generic.DetailView):
+    model = Album
+    template_name = "disks/detail.html"
+    def get_queryset(self):
+        return Album.objects
+    
