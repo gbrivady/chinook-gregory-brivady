@@ -2,9 +2,52 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Album</title>
+    <title>{{album.artist.name}} - {{album.title}}</title>
 </head>
 <body>
-    Detailled information about the album {{album.title}}
+    <h1>
+        {{album.title}}
+    </h1>
+    <table>
+        <tr>
+            <th>
+                N°
+            </th>
+            <th>
+                Title
+            </th>
+            <th>
+                Authors
+            </th>
+            <th>
+                Duration (ms)
+            </th>
+            <th>
+                Price
+            </th>
+        </tr>
+        {% for track in album.track_set.all %}
+        <tr>
+            <td>
+                {{forloop.counter}}
+            </td>
+            <td>
+                {{track.name}}
+            </td>
+            <td>
+                {{track.composer}}
+            </td>
+            <td>
+                {{track.milliseconds}}
+            </td>
+            <td>
+                {{track.unitPrice}} €
+            </td>
+        </tr>
+        {% endfor %}
+
+
+
+    </table>
 </body>
 </html>
