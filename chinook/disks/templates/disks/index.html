@@ -10,7 +10,7 @@
     {% if all_disks_list %}
     <ul>
         {% for album in all_disks_list %}
-            <li>{{ album.title }}</a></li>
+            <li> <a href="{% url 'disks:detail' album.id %}">{{ album.title }}</a></li>
         {% endfor %}
     </ul>
     {% else %}
