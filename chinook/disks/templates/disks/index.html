@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Chinook - All albums</title>
+</head>
+<body>
+    <h1>
+        List of all the disks in the Chinook database
+    </h1>
+    {% if all_disks_list %}
+    <ul>
+        {% for album in all_disks_list %}
+            <li>{{ album.title }}</a></li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p>No disks are available.</p>
+    {% endif %}
+</body>
+</html>
