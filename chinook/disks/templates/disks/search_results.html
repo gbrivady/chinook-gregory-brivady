@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Search Results</title>
+</head>
+<body>
+    {% if  found_album_list %}
+    <h1>
+        Search results
+    </h1>
+    <ul>
+        {% for album in found_album_list %}
+            <li> <a href="{% url 'disks:detail' album.id %}">{{ album.title }}</a></li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p>
+            No album found
+        </p>
+    {% endif %}
+
+    {% comment %} <a href="{% url 'disks:' %}">Go back to home page</a> {% endcomment %}
+</body>
+</html>
